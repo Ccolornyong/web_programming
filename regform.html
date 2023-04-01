@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My ToDo App</title>
+<style>
+h2{
+	border-radius: 5px;
+	background-color: wheat;
+	text-align: center;
+	padding: 15px 0;
+}
+
+#regform{
+	padding:15px 20px;
+	border-radius: 10px;
+	margin:auto;
+	width:40%;
+	background-color:SandyBrown;
+}
+</style>
+<script>
+function addItem(){
+	let todo = document.getElementById("item");
+	let list = document.getElementById("todolist")
+	let listitem = document.createElement("li");
+	listitem.className = "d-flex list-group-item list-group-item-action list-group-item-warning";
+	listitem.innerText = todo.value;
+	list.appendChild(listitem);
+	todo.value= "";
+	todo.focus();
+}
+</script>
+</head>
+<body>
+<h2>My ToDo App</h2>
+<hr>
+<div id = "regform">
+<form name="form1">
+<input id = "item" type="text" placeholder="할일을 입력하세요" size="70">
+<button type="button" onClick="addItem()">할일 추가</button>
+<hr>
+</form>
+</div>
+<div id="todolist">
+<hr>
+<ul></ul>
+</div>
+<hr>
+<span id ="item"></span><br>
+</body>
+</html>
+
